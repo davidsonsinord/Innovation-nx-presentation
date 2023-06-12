@@ -49,6 +49,30 @@ Note:
 
 Note:
 
+<!--v-->
+
+<!-- .slide: data-auto-animate -->
+### Un projet micro-service typique
+
+![](img/micro-service.svg)
+
+Note :
+Exemple en tête, un projet de micro-service typique, avec un back, un front, une librairie pour le back et 
+un design system pour le front.
+(on fait ici abstraction de la technologie employée)
+
+<!--v-->
+
+<!-- .slide: data-auto-animate -->
+### Un projet micro-service typique
+
+Présenter la manière dont est rangé le code
+Présenter le cycle de dev de ce projet
+Présenter ce qui se passe lors d'une release d'un composant.
+
+Note:
+
+
 <!--h-->
 
 ## Le cas idéal que serais un mono-repo
