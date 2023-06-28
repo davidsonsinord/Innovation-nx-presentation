@@ -225,7 +225,14 @@ Grâce à ce mécanisme, NX est capable de garantir la cohérence de l'ensemble 
 Les languages
 
 <img src="img/node_logo.png" height="300">
-<img src="img/multi_techno.png" height="300">
+<div style="flex: fit-content">
+    <img src="img/python-logo.png" height="100">
+    <img src="img/go-logo.png" height="100">
+    <img src="img/php-logo.png" height="100">
+    <img src="img/rust-logo.png" height="100">
+    <img src="img/haskell.png" height="100">
+    <img src="img/java-logo.png" height="100">
+</div>
 
 Note:
 NX supporte nativement l'écosystème node, et est capable de supporter tout type de langages via 
