@@ -182,10 +182,13 @@ systématiquement vérifiable à chaque tentative de livraison.
 <!-- .slide: data-auto-animate data-auto-animate-restart -->
 #### Et NX dans tout ça ?
 
-<img src="img/nx-logo.png" height="500"/>
+
+<img src="img/nx-logo.png" height="300"/>
+<img src="img/narwal_logo.jpg" height="300"/>
+
 
 Note:
-NX est un framework comportant des outils et des techniques simples permettant d'accélérer grandement la productivité et 
+NX est un framework conçu par "NRWL" (narval) comportant des outils et des techniques simples permettant d'accélérer grandement la productivité et 
 la rendre plus simple du point de vue de l'expérience développeur.
 
 Dans notre cas de projet micro-service NX est l'outil idéal pour mettre en pratique un mono-repository presque parfait
@@ -194,12 +197,48 @@ Dans notre cas de projet micro-service NX est l'outil idéal pour mettre en prat
 
 <!-- .slide: data-auto-animate -->
 #### Et NX dans tout ça ?
-Les dépôts
+Le graph de dépendance
 
-<img src="img/nx-logo.png" height="500"/>
+<img src="img/nx_graph.png" height="500"/>
 
 Note:
+NX construit un graph entre les applications / les librairies / les tests E2E
 
+<!--v-->
+
+<!-- .slide: data-auto-animate -->
+#### Et NX dans tout ça ?
+Le graph de dépendance - les "affected"
+
+<img src="img/nx_graph_affected.png" height="500"/>
+
+Note:
+NX est capable de déduire les projets impactés par des modifications.
+À partir des dépendances entre projets, il est capable de reconstituer toute la chaîne de projets impactés.
+
+Grâce à ce mécanisme, NX est capable de garantir la cohérence de l'ensemble du mono-repo
+
+<!--v-->
+
+<!-- .slide: data-auto-animate -->
+#### Et NX dans tout ça ?
+Les languages
+
+<img src="img/node_logo.png" height="300">
+
+Note:
+NX supporte nativement l'écosystème node, et est capable de supporter tout type de langages via 
+des plugins communautaires, ou par implémentation directe.
+
+<!--v-->
+
+<!-- .slide: data-auto-animate -->
+#### Et NX dans tout ça ?
+La Démo
+
+
+
+Note:
 
 <!--h-->
 
