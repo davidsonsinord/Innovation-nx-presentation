@@ -59,11 +59,11 @@ Le principe de base
 <img src="img/what-is-mono-repo.png" alt="drawing" width="800"/>
 
 Note:
-Lorsque l'on gère le code d'un projet type "micro-service", on range le code assez rapidement le code dans plusieurs
+Lorsque l'on gère le code d'un projet type "micro-service", on range souvent le code dans plusieurs
 dépôts de code. (figure de gauche)
 
-Le principe de base d'un mono-repository est de disposer tous ces dépôts dans un seul dépôt de code afin de garder 
-de code dans une seule et même arborescence. (figure de droite)
+Le principe de base d'un mono-repository est de mettre le contenu de tous ces dépôts dans un seul dépôt de 
+code afin de garder une seule et même arborescence. (figure de droite)
 
 <!--h-->
 
@@ -88,7 +88,7 @@ Le cycle de développement - multi
 <img src="img/dev_cycle_multi.png" alt="drawing" width="500"/>
 
 Note:
-Comme on a pu le voir précédemment, le code est donc découpé en quatres dépôts (un pour chaque partie 
+Comme on a pu le voir précédemment, le code est donc découpé en quatre dépôts (un pour chaque partie 
 de ce micro-service).
 
 Et Chacun de ces composants va avoir son propre cycle de développement
@@ -225,6 +225,7 @@ Grâce à ce mécanisme, NX est capable de garantir la cohérence de l'ensemble 
 Les languages
 
 <img src="img/node_logo.png" height="300">
+<img src="img/multi_techno.png" height="300">
 
 Note:
 NX supporte nativement l'écosystème node, et est capable de supporter tout type de langages via 
@@ -248,7 +249,7 @@ Présenter par
 <div style="display: flex">
    <div style="margin-right: 1em;">
       <img src="https://avatars.githubusercontent.com/u/47711333?v=4" width="150"><br/>
-      Anthony QUERE
+      Anthony QUÉRÉ
    </div>
    <div>
       <img src="https://avatars.githubusercontent.com/u/56301405?v=4" width="150"><br/>
