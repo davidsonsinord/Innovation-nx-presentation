@@ -60,10 +60,10 @@ Le principe de base
 
 Note:
 Lorsque l'on gère le code d'un projet type "micro-service", on range le code assez rapidement le code dans plusieurs
-dépôts de code.
+dépôts de code. (figure de gauche)
 
 Le principe de base d'un mono-repository est de disposer tous ces dépôts dans un seul dépôt de code afin de garder 
-de code dans une seule et même arborescence
+de code dans une seule et même arborescence. (figure de droite)
 
 <!--h-->
 
@@ -74,7 +74,7 @@ de code dans une seule et même arborescence
 
 Note:
 Exemple en tête, un projet de micro-service typique, avec un back, un front, une librairie pour le back et 
-un design system pour le front.
+une librairie de composant pour le front.
 
 Maintenant, on va voir la différence concrète entre une organisation de code "classique" et une organisation en mode 
 "mono-repository"
@@ -83,7 +83,7 @@ Maintenant, on va voir la différence concrète entre une organisation de code "
 
 <!-- .slide: data-auto-animate -->
 #### Cas appliqué : un projet micro service
-Le Cycle de développement
+Le cycle de développement - multi
 
 <img src="img/dev_cycle_multi.png" alt="drawing" width="500"/>
 
@@ -97,7 +97,7 @@ Et Chacun de ces composants va avoir son propre cycle de développement
 
 <!-- .slide: data-auto-animate -->
 #### Cas appliqué : un projet micro service
-Le Cycle de développement
+Le cycle de développement - mono
 
 <img src="img/dev_cycle_mono.png" alt="drawing" width="600"/>
 
@@ -112,7 +112,7 @@ Par soucis de simplicité, on peut choisir le trunk base, mais sur le papier, le
 
 <!-- .slide: data-auto-animate -->
 #### Cas appliqué : un projet micro service
-l'organisation des releases
+L'organisation des releases - multi
 
 <img src="img/release_multi_step_1.png" alt="drawing" width="600"/>
 
@@ -123,7 +123,7 @@ Sur la partie livraison de composants, chacun des dépôts livre sa propre versi
 
 <!-- .slide: data-auto-animate -->
 #### Cas appliqué : un projet micro service
-l'organisation des releases
+L'organisation des releases - multi
 
 <img src="img/release_multi_step_2.png" alt="drawing" width="500"/>
 
@@ -135,7 +135,7 @@ jour les liens de la dépendance en plusieurs fois.
 
 <!-- .slide: data-auto-animate -->
 #### Cas appliqué : un projet micro service
-l'organisation des releases
+L'organisation des releases - multi
 
 <img src="img/release_multi_step_3.png" alt="drawing" width="500"/>
 
@@ -146,53 +146,36 @@ ce qui oblige donc à maintenir pendant une période de temps plusieurs versions
 
 <!-- .slide: data-auto-animate -->
 #### Cas appliqué : un projet micro service
-l'organisation des releases
+L'organisation des releases - multi
 
 <img src="img/release_multi_step_4.png" alt="drawing" width="500"/>
 
 Note:
-Il n'y a par ailleurs aucune vérification possible que cette dépendance est un impact sur les composants déjà livrés.
+On obtient à la fin, un cycle de vie qui fonctionne en plusieurs temps.
 
 <!--v-->
 
 <!-- .slide: data-auto-animate -->
 #### Cas appliqué : un projet micro service
-l'organisation des releases
+L'organisation des releases - mono
 
 <img src="img/release_multi_step_1.png" height="500"/>
 
 Note:
-Dans une mono-repository toute cette méchanique est beaucoup plus simple, car la cohérence entre les composants est 
+Dans une mono-repository toute cette mécanique est beaucoup plus simple, car la cohérence entre les composants est 
 systématiquement vérifiable à chaque tentative de livraison.
 
 <!--v-->
 
 <!-- .slide: data-auto-animate -->
 #### Cas appliqué : un projet micro service
-l'organisation des releases
+L'organisation des releases - mono
 
 <img src="img/release_mono_step_2.png" height="500"/>
 
 Note:
 Dans une mono-repository toute cette mécanique est beaucoup plus simple, car la cohérence entre les composants est
 systématiquement vérifiable à chaque tentative de livraison.
-
-<!--h-->
-
-
-<!--v-->
-
-<!-- .slide: data-auto-animate -->
-#### Ça donnerait quoi dans un mono-repository ?
-Les livraisons
-
-<img src="img/release_mono_step_2.png" height="500"/>
-
-Note:
-D'ordinaire, on devrait pouvoir gérer cette incohérence par une seconde livraison, ce qui peut rendre (dans notre cas) la
-livraison "2" incohérente
-
-[//]: # (TODO: simplifier le schema d'explication du fait du breaking changes)
 
 <!--h-->
 

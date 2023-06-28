@@ -6,3 +6,7 @@ body:after {
     bottom: 3em;
     left: 3em;
 }
+
+.reveal section p {
+    font-size: 0.7em !important;
+}
