@@ -1,7 +1,12 @@
 body:after {
     content: url(../img/davidson-logo.png);
+    zoom: 50%;
     font-size: 10px;
     position: fixed;
     bottom: 3em;
     left: 3em;
+}
+
+.reveal section p {
+    font-size: 0.7em !important;
 }
