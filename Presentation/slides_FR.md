@@ -27,24 +27,25 @@ sources:
 
 ## Sommaire
 
-1. Faire du micro-service avec plusieurs repository
-2. Ça donnerait quoi dans un mono-repository ?
+1. Qu'est-ce qu'un mono-repository ?
+2. Cas appliqué : un projet micro service
 3. Et NX dans tout ça ?
 
 Note:
 le plan de la présentation
 
-1. Faire du micro-service avec plusieurs repository
-   - l'organisation multi-repo d'un projet micro-service
-   - le cycle de dev typique
+1. Qu'est-ce qu'un mono-repository ?
+2. Cas appliqué : un projet micro service
+   - présentation du cas
+   - le cycle de dev 
+     - en multi-repo
+     - en mono-repo
    - l'organisation des releases
-2. Ça donnerait quoi dans un mono-repository ?
-   - l'organisation du projet dans un mono-repository
-   - l'adaptation du cycle de dev
-   - l'adaptation des releases
+     - en multi-repo
+     - en mono-repo
 3. Et NX dans tout ça ?
    - décrire le principe du fonctionnement de NX
-   - parler de la mise en pratique (quelques configs)
+   - parler de ce qui a été réaliser sur le projet `DavLab`
    - Demo !
 4. Questions
 5. Remerciements
@@ -52,118 +53,138 @@ le plan de la présentation
 <!--h-->
 
 <!-- .slide: data-auto-animate data-auto-animate-restart -->
-#### Faire du micro-service avec plusieurs repository
+#### Qu'est-ce qu'un "Mono-Repository" ?
+Le principe de base
+
+<img src="img/what-is-mono-repo.png" alt="drawing" width="800"/>
+
+Note:
+Lorsque l'on gère le code d'un projet type "micro-service", on range le code assez rapidement le code dans plusieurs
+dépôts de code.
+
+Le principe de base d'un mono-repository est de disposer tous ces dépôts dans un seul dépôt de code afin de garder 
+de code dans une seule et même arborescence
+
+<!--h-->
+
+<!-- .slide: data-auto-animate data-auto-animate-restart -->
+#### Cas appliqué : un projet micro service
 
 ![](img/micro-service.png)
 
 Note:
 Exemple en tête, un projet de micro-service typique, avec un back, un front, une librairie pour le back et 
 un design system pour le front.
-(on fait ici abstraction de la technologie employée)
+
+Maintenant, on va voir la différence concrète entre une organisation de code "classique" et une organisation en mode 
+"mono-repository"
 
 <!--v-->
 
 <!-- .slide: data-auto-animate -->
-#### Faire du micro-service avec plusieurs repository
-Les dépôts
+#### Cas appliqué : un projet micro service
+Le Cycle de développement
 
-![](img/repositories.png)
+<img src="img/dev_cycle_multi.png" alt="drawing" width="500"/>
 
 Note:
-le code est donc découpé en quatre repository (un pour chaque partie de ce micro-service).
-Chaque dépôt GitHub possède son propre cycle de développement
+Comme on a pu le voir précédemment, le code est donc découpé en quatres dépôts (un pour chaque partie 
+de ce micro-service).
+
+Et Chacun de ces composants va avoir son propre cycle de développement
 
 <!--v-->
 
 <!-- .slide: data-auto-animate -->
-#### Faire du micro-service avec plusieurs repository
-Les cycles de développements
+#### Cas appliqué : un projet micro service
+Le Cycle de développement
 
-<img src="img/dev-cycle.png" height="500"/>
+<img src="img/dev_cycle_mono.png" alt="drawing" width="600"/>
 
 Note:
-Les cycles de développements varie ici en fonction de la nature du composant utilisé, on a donc du "trunk based" pour les 
-composants type "librairie" (system design / lib back) et on est sûr du "git flow" pour nos composants 
-type "application" (front / back)
+Dans le cas d'un mono repository, on ne peut pas avoir deux cycles de développements different.
+
+Il faut donc en choisir un et faire en sorte que chaque composant s'inscrive dans ce nouveau cycle de développement.
+
+Par soucis de simplicité, on peut choisir le trunk base, mais sur le papier, le git flow fonctionne également.
 
 <!--v-->
 
 <!-- .slide: data-auto-animate -->
-#### Faire du micro-service avec plusieurs repository
-Les livraisons
+#### Cas appliqué : un projet micro service
+l'organisation des releases
 
-<img src="img/release_step_1.png" height="500"/>
+<img src="img/release_multi_step_1.png" alt="drawing" width="600"/>
 
 Note:
-Lors de la livraison d'un composant, on livre un composant sans pour autant être forcé de mettre à jour les composants
-qui en depend
+Sur la partie livraison de composants, chacun des dépôts livre sa propre version.
 
 <!--v-->
 
 <!-- .slide: data-auto-animate -->
-#### Faire du micro-service avec plusieurs repository
-Les livraisons
+#### Cas appliqué : un projet micro service
+l'organisation des releases
 
-<img src="img/release_step_2.png" height="500"/>
+<img src="img/release_multi_step_2.png" alt="drawing" width="500"/>
 
 Note:
-Si une dependence subit un changement bloquant, la version précédente est quant à elle toujours disponible, 
-on n'est donc pas obligé de mettre à jour la version du composant qui depend de notre composant (pour l'instant)
+Par conséquence, lorsqu'un composant crée une dépendance vis à vis d'un autre, alors, on se retrouve à devoir mettre à
+jour les liens de la dépendance en plusieurs fois.
 
+<!--v-->
+
+<!-- .slide: data-auto-animate -->
+#### Cas appliqué : un projet micro service
+l'organisation des releases
+
+<img src="img/release_multi_step_3.png" alt="drawing" width="500"/>
+
+Note:
+ce qui oblige donc à maintenir pendant une période de temps plusieurs versions de composants
+
+<!--v-->
+
+<!-- .slide: data-auto-animate -->
+#### Cas appliqué : un projet micro service
+l'organisation des releases
+
+<img src="img/release_multi_step_4.png" alt="drawing" width="500"/>
+
+Note:
+Il n'y a par ailleurs aucune vérification possible que cette dépendance est un impact sur les composants déjà livrés.
+
+<!--v-->
+
+<!-- .slide: data-auto-animate -->
+#### Cas appliqué : un projet micro service
+l'organisation des releases
+
+<img src="img/release_multi_step_1.png" height="500"/>
+
+Note:
+Dans une mono-repository toute cette méchanique est beaucoup plus simple, car la cohérence entre les composants est 
+systématiquement vérifiable à chaque tentative de livraison.
+
+<!--v-->
+
+<!-- .slide: data-auto-animate -->
+#### Cas appliqué : un projet micro service
+l'organisation des releases
+
+<img src="img/release_mono_step_2.png" height="500"/>
+
+Note:
+Dans une mono-repository toute cette mécanique est beaucoup plus simple, car la cohérence entre les composants est
+systématiquement vérifiable à chaque tentative de livraison.
 
 <!--h-->
 
-<!-- .slide: data-auto-animate data-auto-animate-restart -->
-#### Ça donnerait quoi dans un mono-repository ?
-Le dépôt
-
-<img src="img/ideal_mono.png" height="500"/>
-
-Note:
-Si maintenant, on souhaite convertir ce projet en mode micro-service, quel serais le cas ideal pour gérer ce projet.
-On s'attend donc à avoir un seul dépôt de code dans lequel on va retrouver la totalité de notre code
 
 <!--v-->
 
 <!-- .slide: data-auto-animate -->
 #### Ça donnerait quoi dans un mono-repository ?
-Les cycles de développements
-
-<img src="img/dev-cycle_mono_1.png" height="500"/>
-
-Note:
-si on regarde l'organisation de nos composants, rien n'as vraiment changer en termes de place dans leur fonction respective,
-par-contre du point de vue de Git, on ne peut plus maintenir deux types de cycle de développement en parallèle.
-
-<!--v-->
-
-<!-- .slide: data-auto-animate -->
-#### Ça donnerait quoi dans un mono-repository ?
-Les cycles de développements
-
-<img src="img/dev-cycle_mono_2.png" height="500">
-
-Note:
-Comme nos composants n'existe pas dans toutes les versions et un à un instant T, des composants sont livré avec une/des 
-version(s) qui ne corresponde(s) pas à leur besoin.
-
-Il va falloir en choisir un, de telle façon que l'intégralité des composants existe toujours en toute version
-
-<!--v-->
-
-<!-- .slide: data-auto-animate -->
-#### Ça donnerait quoi dans un mono-repository ?
-
-<img src="img/release_mono_step_1.png" height="500"/>
-
-Note:
-du côté de la gestion des versions, là aussi, il faut adapter le mode de fonctionnement, car la suite complète 
-des composants peut se retrouver dans une situation ou une livraison se retrouve dans un état d'incohérence
-
-<!--v-->
-
-<!-- .slide: data-auto-animate -->
-#### Ça donnerait quoi dans un mono-repository ?
+Les livraisons
 
 <img src="img/release_mono_step_2.png" height="500"/>
 
@@ -171,17 +192,31 @@ Note:
 D'ordinaire, on devrait pouvoir gérer cette incohérence par une seconde livraison, ce qui peut rendre (dans notre cas) la
 livraison "2" incohérente
 
+[//]: # (TODO: simplifier le schema d'explication du fait du breaking changes)
+
 <!--h-->
 
 <!-- .slide: data-auto-animate data-auto-animate-restart -->
 #### Et NX dans tout ça ?
 
-
-
+<img src="img/nx-logo.png" height="500"/>
 
 Note:
 NX est un framework comportant des outils et des techniques simples permettant d'accélérer grandement la productivité et 
-la rendre plus 
+la rendre plus simple du point de vue de l'expérience développeur.
+
+Dans notre cas de projet micro-service NX est l'outil idéal pour mettre en pratique un mono-repository presque parfait
+
+<!--v-->
+
+<!-- .slide: data-auto-animate -->
+#### Et NX dans tout ça ?
+Les dépôts
+
+<img src="img/nx-logo.png" height="500"/>
+
+Note:
+
 
 <!--h-->
 
