@@ -16,7 +16,7 @@ Par
 Note: authors : 
  - S. LAVAZAIS
  - J. SPICHT
- - A. QUERE
+ - A. QUÉRÉ
 
 sources:
  - https://excalidraw.com
@@ -248,6 +248,15 @@ La Démo
 
 Note:
 
+1. Présenter le repository de Démo
+2. Présenter un générateur
+3. Lancer Nx graph
+4. Rajouter la dépendance implicite entre back et front
+5. Générer un nouveau projet front svelte
+6. Montrer l'intégration dans le graph
+7. Montrer deux trois commandes
+8. Montrer Nx Cloud
+
 <!--h-->
 
 #### Merci pour votre temps !
@@ -268,7 +277,7 @@ Présenter par
    </div>
 </div>
 
-QRCode
+![QRCode-feedback.png](img/QRCode-feedback.png)
 
 Sources:
 - https://excalidraw.com
