@@ -35,4 +35,5 @@ jobs:
     name: Nx Cloud - Agents
     uses: nrwl/ci/.github/workflows/nx-cloud-agents.yml@v0.13.0
     with:
+      working-directory: "Demonstration/davidson-monorepo"
       number-of-agents: 3
