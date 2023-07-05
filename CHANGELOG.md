@@ -1,3 +1,11 @@
+## [1.2.1](https://github.com/davidsonsinord/Innovation-nx-presentation/compare/1.2.0...1.2.1) (2023-07-05)
+
+
+### Bug Fixes
+
+* **code owner:** fix code owner group alias ([dae7c78](https://github.com/davidsonsinord/Innovation-nx-presentation/commit/dae7c7834bdc9ce2be90213a63de296c25a33af1))
+* **presentation:** add missing slide on mono repo release management ([cc29df7](https://github.com/davidsonsinord/Innovation-nx-presentation/commit/cc29df7d52148e2a57892fd117d2dd8a539091ed))
+
 # [1.2.0](https://github.com/davidsonsinord/Innovation-nx-presentation/compare/1.1.0...1.2.0) (2023-07-05)
 
 
