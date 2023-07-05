@@ -1,0 +1,22 @@
+{
+  "name": "back-library",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/back-library/src",
+  "targets": {
+    "build": {
+      "executor": "@jnxplus/nx-quarkus-maven:build",
+      "outputs": ["libs/back-library/target"]
+    },
+    "lint": {
+      "executor": "@jnxplus/nx-quarkus-maven:lint",
+      "options": {
+        "linter": "checkstyle"
+      }
+    },
+    "test": {
+      "executor": "@jnxplus/nx-quarkus-maven:test"
+    }
+  },
+  "tags": []
+}

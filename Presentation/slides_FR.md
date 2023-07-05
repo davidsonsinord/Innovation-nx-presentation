@@ -16,7 +16,7 @@ Par
 Note: authors : 
  - S. LAVAZAIS
  - J. SPICHT
- - A. QUERE
+ - A. QUÉRÉ
 
 sources:
  - https://excalidraw.com
@@ -248,6 +248,64 @@ La Démo
 
 Note:
 
+Pour la démo, pour faire les différentes parties, j'ai retravaillé un peu l'ordre, je vous propose ce scénario :
+
+**1. Présenter le repository de Démo**
+Départ : back, lib back, lib front
+
+**2. Présenter un générateur**
+Générer l'app Next avec `nx g app`
+
+Modifier le contenu de la page principale (ctrl+c/v)
+Montrer l'import de la librarie
+Montrer l'utilisation de l'API
+
+**3. Lancer Nx graph**
+Lancer `nx graph`
+
+Montrer le lien entre le back et la lib du back
+Pareil pour le front
+
+Montrer l'abscence de lien entre l'app front et l'app back
+
+**4. Rajouter la dépendance implicite entre back et front**
+Modifier le `project.json`
+
+**5. Montrer l'intégration dans le graph**
+Relancer `nx graph`
+Montrer le nouveau lien dans le graphs
+
+**6. Montrer 2, 3 commandes**
+commit les changements sur la main 😨
+`git add . && git commit -m "feat(myapp-front): create myapp-front"`
+
+Créer une nouvelle branche
+`git checkout -b my-feat`
+
+Montrer les tests en affected : rien ne se passe
+`nx affected --target=test`
+
+Modifier la lib
+
+Relancer les tests et regarder les prpjets affected
+`nx affected --target=test`
+
+Montrer lancer un executeur sur un projet specific
+`nx run myapp-front:serve`
+
+formatter tout le code
+`nx format`
+
+**7. NX Cloud** (si il reste du temps)
+Montrer une PR avec des erreurs dans les tests
+
+Montrer le rapport de NX sur la PR
+
+Montrer les logs sur la console
+
+Montrer le cache sur la console
+
+
 <!--h-->
 
 #### Merci pour votre temps !
@@ -268,7 +326,7 @@ Présenter par
    </div>
 </div>
 
-QRCode
+![QRCode-feedback.png](img/QRCode-feedback.png)
 
 Sources:
 - https://excalidraw.com
