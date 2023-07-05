@@ -177,6 +177,17 @@ Note:
 Dans une mono-repository toute cette mécanique est beaucoup plus simple, car la cohérence entre les composants est
 systématiquement vérifiable à chaque tentative de livraison.
 
+<!--v-->
+
+<!-- .slide: data-auto-animate -->
+#### Cas appliqué : un projet micro service
+L'organisation des releases - mono
+
+<img src="img/release_mono_step_3.png" height="500"/>
+
+Note:
+On adoptera pour le coup une version commune qui permet de conservé la cohérence des versions entre composant
+
 <!--h-->
 
 <!-- .slide: data-auto-animate data-auto-animate-restart -->
@@ -243,8 +254,6 @@ des plugins communautaires, ou par implémentation directe.
 <!-- .slide: data-auto-animate -->
 #### Et NX dans tout ça ?
 La Démo
-
-
 
 Note:
 
