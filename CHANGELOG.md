@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/davidsonsinord/Innovation-nx-presentation/compare/1.1.0...1.2.0) (2023-07-05)
+
+
+### Features
+
+* **demo:** add Demo directory ([#2](https://github.com/davidsonsinord/Innovation-nx-presentation/issues/2)) ([e3af208](https://github.com/davidsonsinord/Innovation-nx-presentation/commit/e3af2080e2be852a5430a6632f980f9c0c453df7))
+
 # [1.1.0](https://github.com/davidsonsinord/Innovation-nx-presentation/compare/1.0.0...1.1.0) (2023-06-28)
 
 
