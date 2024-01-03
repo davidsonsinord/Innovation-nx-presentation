@@ -11,7 +11,6 @@
     <version>0.0.1</version>
     <relativePath>../../pom.xml</relativePath>
   </parent>
-  <groupId>fr.davidson</groupId>
   <artifactId>myapp-back</artifactId>
   <version>0.0.1</version>
   <name>myapp-back</name>
@@ -20,11 +19,6 @@
   </description>
 
   <properties>
-    <maven.compiler.release>${java.version}</maven.compiler.release>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <compiler-plugin.version>3.11.0</compiler-plugin.version>
-    <surefire-plugin.version>3.0.0</surefire-plugin.version>
     <skipITs>true</skipITs>
   </properties>
 
@@ -72,17 +66,8 @@
         </executions>
       </plugin>
       <plugin>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>${compiler-plugin.version}</version>
-        <configuration>
-          <compilerArgs>
-            <arg>-parameters</arg>
-          </compilerArgs>
-        </configuration>
-      </plugin>
-      <plugin>
         <artifactId>maven-surefire-plugin</artifactId>
-        <version>${surefire-plugin.version}</version>
+        <version>${maven-surefire-plugin.version}</version>
         <configuration>
           <systemPropertyVariables>
             <java.util.logging.manager>
@@ -94,7 +79,7 @@
       </plugin>
       <plugin>
         <artifactId>maven-failsafe-plugin</artifactId>
-        <version>${surefire-plugin.version}</version>
+        <version>${maven-failsafe-plugin.version}</version>
         <executions>
           <execution>
             <goals>
