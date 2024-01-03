@@ -6,7 +6,7 @@
   "targets": {
     "build": {
       "executor": "@jnxplus/nx-quarkus-maven:build",
-      "outputs": ["libs/back-library/target"]
+      "outputs": ["{projectRoot}/target"]
     },
     "lint": {
       "executor": "@jnxplus/nx-quarkus-maven:lint",

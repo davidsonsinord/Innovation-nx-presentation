@@ -6,7 +6,7 @@
   "targets": {
     "build": {
       "executor": "@jnxplus/nx-quarkus-maven:build",
-      "outputs": ["apps/myapp-back/target"]
+      "outputs": ["{projectRoot}/target"]
     },
     "serve": {
       "executor": "@jnxplus/nx-quarkus-maven:serve",

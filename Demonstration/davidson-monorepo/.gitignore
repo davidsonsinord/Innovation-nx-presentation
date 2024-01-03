@@ -46,3 +46,4 @@ target/
 
 # Next.js
 .next
+.nx/cache
