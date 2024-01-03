@@ -5,17 +5,20 @@
   "sourceRoot": "libs/back-library/src",
   "targets": {
     "build": {
-      "executor": "@jnxplus/nx-quarkus-maven:build",
-      "outputs": ["libs/back-library/target"]
-    },
-    "lint": {
-      "executor": "@jnxplus/nx-quarkus-maven:lint",
+      "executor": "@jnxplus/nx-maven:run-task",
+      "outputs": [
+        "{projectRoot}/target",
+        "{options.outputDirLocalRepo}"
+      ],
       "options": {
-        "linter": "checkstyle"
+        "task": "install -DskipTests=true"
       }
     },
     "test": {
-      "executor": "@jnxplus/nx-quarkus-maven:test"
+      "executor": "@jnxplus/nx-maven:run-task",
+      "options": {
+        "task": "test"
+      }
     }
   },
   "tags": []
