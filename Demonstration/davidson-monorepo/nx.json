@@ -48,7 +48,7 @@
     ],
     "sharedGlobals": []
   },
-  "plugins": ["@jnxplus/nx-quarkus-maven"],
+  "plugins": ["@jnxplus/nx-maven"],
   "generators": {
     "@nx/react": {
       "application": {

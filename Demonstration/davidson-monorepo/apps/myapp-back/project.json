@@ -5,25 +5,29 @@
   "sourceRoot": "apps/myapp-back/src",
   "targets": {
     "build": {
-      "executor": "@jnxplus/nx-quarkus-maven:build",
-      "outputs": ["{projectRoot}/target"]
-    },
-    "serve": {
-      "executor": "@jnxplus/nx-quarkus-maven:serve",
-      "dependsOn": ["build"]
-    },
-    "lint": {
-      "executor": "@jnxplus/nx-quarkus-maven:lint",
+      "executor": "@jnxplus/nx-maven:run-task",
+      "outputs": ["{projectRoot}/target"],
       "options": {
-        "linter": "checkstyle"
+        "task": "compile -DskipTests=true"
       }
     },
-    "test": {
-      "executor": "@jnxplus/nx-quarkus-maven:test",
-      "dependsOn": ["build"]
-    },
     "build-image": {
-      "executor": "@jnxplus/nx-quarkus-maven:build-image"
+      "executor": "@jnxplus/nx-maven:quarkus-build-image"
+    },
+    "serve": {
+      "executor": "@jnxplus/nx-maven:run-task",
+      "options": {
+        "task": "quarkus:dev",
+        "keepItRunning": true
+      },
+      "dependsOn": ["^build"]
+    },
+    "test": {
+      "executor": "@jnxplus/nx-maven:run-task",
+      "options": {
+        "task": "test"
+      },
+      "dependsOn": ["^build"]
     }
   },
   "tags": []

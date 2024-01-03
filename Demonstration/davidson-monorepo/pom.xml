@@ -14,8 +14,6 @@
     <java.version>17</java.version>
     <kotlin.version>1.8.21</kotlin.version>
     <quarkus.version>3.1.2.Final</quarkus.version>
-    <checkstyle.version>10.11.0</checkstyle.version>
-    <ktlint.version>0.49.1</ktlint.version>
   </properties>
 
   <modules>

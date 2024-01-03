@@ -1,3 +1,4 @@
 {
-  "xmlWhitespaceSensitivity": "ignore"
+  "xmlWhitespaceSensitivity": "ignore",
+  "plugins": ["@prettier/plugin-xml", "prettier-plugin-java"]
 }

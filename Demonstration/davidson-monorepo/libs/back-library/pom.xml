@@ -16,7 +16,7 @@
   <version>0.0.1</version>
   <name>back-library</name>
   <description>
-    This project was generated with @jnxplus/nx-quarkus-maven
+    This project was generated with @jnxplus/nx-maven
   </description>
 
   <properties>
